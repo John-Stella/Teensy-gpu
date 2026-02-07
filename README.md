@@ -9,4 +9,4 @@
 - Build a *compiler* to generate kernels from a custom ISA.
   - The hope is that I can add new instructions as the processing units change.
   - Will probably only support very rudimentary 'C' like code.
-- Build a control unit for the GPPU that can interface with either a serial or PCIe connection.
+- Build a control unit for the GPAU that can interface with either a serial or PCIe connection.
