@@ -1,10 +1,10 @@
-# Teensy-gppu
-  A personal project to create a teensy general-purpose-processing-unit with inspiration from tiny-gpu and my own graduate research on float-like ALUs.  
+# Teensy-gpau
+  A personal project to create a teensy general-process-acceleration-unit with inspiration from tiny-gpu and my own graduate research on float-like ALUs.  
 
-
+  This project is a learning experience for me, based on computer architecture, integrating modules to create a working system.
 
 ## Scope
-- The GPPU will be FPGA-based, incorporating specialized processing units.
+- The GPAU will be FPGA-based, incorporating specialized processing units.
   - Stretch goal of a tape-out if a decent version is made.
 - Build a *compiler* to generate kernels from a custom ISA.
   - The hope is that I can add new instructions as the processing units change.
