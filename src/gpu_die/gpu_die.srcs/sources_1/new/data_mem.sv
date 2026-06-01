@@ -21,12 +21,10 @@
 
 import gpu_pkg::*;
 
-module data_mem #(
-    parameter int DEPTH = 256
-    ) (
+module data_mem (
     input logic clk,
     
-    input logic [DATA_WIDTH-1:0] addr,
+    input logic [$clog2(DEPTH)-1:0] addr,  // Current width 8
     input logic we,
     input logic [DATA_WIDTH-1:0] wd,
     

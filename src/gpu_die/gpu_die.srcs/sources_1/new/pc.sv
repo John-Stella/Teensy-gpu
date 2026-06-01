@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 05/22/2026 09:06:56 PM
+// Create Date: 05/31/2026 09:41:10 PM
 // Design Name: 
-// Module Name: instr_mem
+// Module Name: pc
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,22 +19,23 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+import gpu_pkg::*;
 
-module instr_mem # (
-  parameter string INIT_FILE = ""
-) (
-    input logic [$clog2(DEPTH)-1:0] addr,
-    output logic [DEPTH-1:0] instr
+module pc(
+    input logic clk,
+    input logic rst,
+    
+    output logic pc
     );
     
-    logic [INSTR_WIDTH-1:0] mem [DEPTH];
-
-    initial begin
-        if (INIT_FILE != "") begin
-            $readmemh(INIT_FILE, mem);
+    logic [$clog2(DEPTH)-1:0] current_count;
+    
+    always_ff @(posedge clk) begin 
+        if (rst) begin
+            current_count <= '0;
+        end else begin
+            current_count <= current_count + 1;
         end
     end
-    
-    assign instr = mem[addr];
     
 endmodule

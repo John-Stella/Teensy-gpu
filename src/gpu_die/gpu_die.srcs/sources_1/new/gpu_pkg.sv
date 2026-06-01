@@ -22,9 +22,14 @@
 package gpu_pkg;
     
     parameter int DATA_WIDTH = 8;
+    parameter int INSTR_WIDTH = 24;
+    
+    //
+    parameter int DEPTH = 256;
+    
     parameter int REG_COUNT = 8;
-    //int REG_ADDR_WIDTH = $log2(REG_COUNT) ; // unknown if this works
-    parameter int REG_ADDR_WIDTH = 4;
+    parameter int REG_ADDR_WIDTH = $log2(REG_COUNT) ; // unknown if this works
+    //int REG_ADDR_WIDTH = 4;
     
     typedef enum logic [3:0] {
         OP_NOP  = 'h0,
@@ -38,6 +43,7 @@ package gpu_pkg;
         OP_STR  = 'hF
     } op_code_t;
     
+    // Instr width = 24
     typedef struct packed {
         logic [3:0] op_code;
         logic [3:0] rd;

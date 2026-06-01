@@ -27,8 +27,8 @@ module reg_file (
     
     input logic [REG_ADDR_WIDTH-1:0] rs_a1, // source register address 1
     input logic [REG_ADDR_WIDTH-1:0] rs_a2, // source register address 2
-    output logic [DATA_WIDTH-1:0] rd1,      // read data 1
-    output logic [DATA_WIDTH-1:0] rd2,      // read data 2
+    output logic [DATA_WIDTH-1:0] rd1,      // return data 1
+    output logic [DATA_WIDTH-1:0] rd2,      // return data 2
     
     input logic we,                         // write enable
     

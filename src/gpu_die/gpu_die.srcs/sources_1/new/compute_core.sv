@@ -21,6 +21,13 @@
 
 
 module compute_core(
-
+    input logic clk,
+    input logic rst,
+    input logic start,
+    
+    output logic done
     );
+    
+    pc pc1 ();
+    
 endmodule

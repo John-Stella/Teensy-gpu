@@ -19,14 +19,13 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+import gpu_pkg::*;
 
-module alu #(
-    parameter int width = 8
-) (
+module alu (
     input   logic   [3:0]       op_code,
-    input   logic   [width-1:0] a,
-    input   logic   [width-1:0] b,
-    output  logic   [width-1:0] result
+    input   logic   [DATA_WIDTH-1:0] a,
+    input   logic   [DATA_WIDTH-1:0] b,
+    output  logic   [DATA_WIDTH-1:0] result
 );
 
     always_comb begin
