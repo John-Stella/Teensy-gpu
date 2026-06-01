@@ -38,4 +38,6 @@ module pc(
         end
     end
     
+    assign pc = current_count;
+    
 endmodule
