@@ -28,6 +28,23 @@ module compute_core(
     output logic done
     );
     
-    pc pc1 ();
+    wire c_pc;
+    wire c_instr;
+    wire ALU_result;
+    wire wd;
+    wire scr_a;
+    wire scr_b;
+    
+    instr_mem im_1 (.addr(c_pc), .instr(c_instr));
+    
+    data_mem dm_1 (.clk(clk), .addr(ALU_result), .we(), .wd(), .rd());
+    
+    pc pc_1 (.clk(clk), .rst(rst), .pc(c_pc));
+    
+    decoder dc_1 ();
+    
+    reg_file rf_1 ();
+    
+    alu alu_1();
     
 endmodule
